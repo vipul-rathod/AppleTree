@@ -1,0 +1,19 @@
+Master Shot = ''
+Episode = Fetch from master shot
+
+Querry list of shots in episodes
+
+
+While opening maya:
+    query master shot detail from shotgun while user clicks on launch maya
+
+search for audios and line up in sequence
+
+find child shots for the layout master shot
+
+get cutIn and cutOut values for each shot
+
+create cameras for all child shots with standard naming
+
+
+
