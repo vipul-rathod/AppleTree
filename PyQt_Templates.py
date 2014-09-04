@@ -47,4 +47,5 @@ if __name__ == '__main__':
     app  = QtGui.QApplication(sys.argv)
     temp = TemplateUI()
     temp.show()
+    help(app)
     app.exec_()

@@ -58,7 +58,6 @@ class PublishPlayblast(QtGui.QWidget):
         self._getMovFiles()
         self.shComboBox.currentIndexChanged[str].connect(self._getMovFiles)
         
-        
         #    Set window title
         self.setWindowTitle("Publish Playblast Tool v%s" % toolVersion)
 
@@ -74,7 +73,7 @@ class PublishPlayblast(QtGui.QWidget):
                     if os.listdir(os.path.join(self.movPath,dir)):
                         self.epDict[dir] = os.listdir(os.path.join(self.movPath,dir))
         return self.epDict
-    
+
     def populateComboList(self):
         self.episodes = self._getEpisodeAndShotFolderList()
         self.epComboBox.addItems(sorted(self.episodes.keys()))
@@ -136,9 +135,7 @@ class PublishPlayblast(QtGui.QWidget):
                                     self.playblastName = os.path.basename(self.publishPath)
 
                             shutil.copy2(srcPath, self.publishPath)
-                            
                             publishMovPath = os.path.join(self.publishingPath(episode, shotName), self.playblastName)
-                            
                             getShotTasks =  sgsrv.find_one('Shot',  filters = [["code", "is", shotName]], fields=['id', 'tasks'])
 
                             for key, values in getShotTasks.iteritems():
